@@ -1,2 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+h1 {
+  text-align: center;
+}
+#prompt {
+  font-size: 6vw;
+  background-color: blue;
+  color: white;
+  height: 20vw;
+  overflow: scroll;
+  white-space: pre-line;
+}
