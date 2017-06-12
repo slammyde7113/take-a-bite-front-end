@@ -44,10 +44,83 @@ const signOut = function () {
     }
   })
 }
+const showMenu = function () {
+  return $.ajax({
+    url: `${config.apiOrigins.development}/menu_items`,
+    method: 'GET'
+  })
+}
+const createProfile = function (data) {
+  return $.ajax({
+    url: `${config.apiOrigins.development}/profiles`,
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    method: 'POST',
+    data: {
+      'profile':
+      {
+        'user_id': '' + store.id + '',
+        'menu_item_id': '' + data + ''
+      }
+    }
+  })
+  .then((response) => {
+    console.log(response)
+  })
+}
+const showProfiles = function () {
+  return $.ajax({
+    url: `${config.apiOrigins.development}/profiles`,
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    method: 'GET'
+  })
+  .then((data) => {
+    console.log(data)
+    return data
+  })
+}
+const deleteProfile = function (data) {
+  store.profile_id = data
+  return $.ajax({
+    url: `${config.apiOrigins.development}/profiles/${store.profile_id}`,
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    method: 'DELETE'
+  })
+  .then((data) => {
+    console.log(store.profile_id)
+    return store.profile_id
+  })
+}
+
+const showProfileItem = function (data) {
+  const price = data.toString()
+  console.log(price)
+  return $.ajax({
+    url: `${config.apiOrigins.development}/profiles/show-profile-total/${data}`,
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    method: 'GET'
+  })
+  .then((data) => {
+    console.log(data)
+    return data
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  showMenu,
+  createProfile,
+  showProfiles,
+  deleteProfile,
+  showProfileItem
 }

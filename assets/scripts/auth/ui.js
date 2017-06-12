@@ -1,8 +1,11 @@
 'use strict'
-// const events = require('./events')
-// const store = require('../store')
-// const api = require('./api')
+const showMenuTemplate = require('../templates/menu-list.handlebars')
+const showProfilesTemplate = require('../templates/profiles-list.handlebars')
 
+// const createButton = function (destination) {
+//   const $addToProfile = $('<input class="profile-input" type="button" value="Add to Profile"/>')
+//   $addToProfile.appendTo($(`${destination}`))
+// }
 const modalTitleChange = function (title, condition) {
   const result = title
   if (condition) {
@@ -62,6 +65,52 @@ const signOutFailure = (error) => {
   $('#prompt').text('Signout Unsuccessful')
   modalTitleChange('Sign Out', false)
 }
+const showMenuSuccess = (data) => {
+  console.log(data)
+  $('.content').empty()
+  const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
+  $('.content').append(showMenuHtml)
+}
+const showMenuFailure = (error) => {
+  console.log(error)
+  $('#prompt').text('Show Menu Failure')
+}
+const createProfileSuccess = () => {
+  console.log('cool')
+  $('#prompt').text('Create Profile Successful')
+}
+const createProfileFailure = () => {
+  console.log('not cool')
+  $('#prompt').text('Create Profile Failure')
+}
+const showProfilesSuccess = (data) => {
+  console.log('woohoo')
+  console.log(data)
+  $('.content').empty()
+  const showProfilesHtml = showProfilesTemplate({ profile: data.profiles })
+  $('.content').append(showProfilesHtml)
+  $('#prompt').text('Show Profiles Successful')
+}
+const showProfilesFailure = () => {
+  console.log(':()')
+  $('#prompt').text('Show Profiles Failure')
+}
+const deleteProfileSuccess = (data) => {
+  console.log('hoo')
+  console.log(data)
+  $('#prompt').text('Delete Profiles Successful')
+}
+const showProfileItemSuccess = (data) => {
+  console.log(data)
+  $('.content').empty()
+  const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
+  $('.content').append(showMenuHtml)
+  $('#prompt').text('Show Item Successful')
+}
+const showProfileItemFailure = (error) => {
+  console.log(error)
+  $('#prompt').text('Show Item Failure')
+}
 
 module.exports = {
   modalTitleChange,
@@ -72,5 +121,14 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  showMenuSuccess,
+  showMenuFailure,
+  createProfileSuccess,
+  createProfileFailure,
+  showProfilesSuccess,
+  showProfilesFailure,
+  deleteProfileSuccess,
+  showProfileItemSuccess,
+  showProfileItemFailure
 }

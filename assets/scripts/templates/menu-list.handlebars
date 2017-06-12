@@ -1,0 +1,14 @@
+{{#each menu_item as |item|}}
+ <ul>
+  <h1 data-id="{{item.id}}"> <li><small>Name: {{item.name}}</small></li></h1>
+  <div data-id="{{item.id}}">
+    {{#if item.description}}
+      <li>{{item.description}}</li>
+      <li>{{item.id}}</li>
+    {{else}}
+      No description.
+    {{/if}}
+    <button class=add-button> Add Item </button>
+  </div>
+</ul>
+{{/each}}

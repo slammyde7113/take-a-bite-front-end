@@ -1,0 +1,16 @@
+{{#each profile as |item|}}
+ <ul data-id="{{item.id}}">
+  <h1 data-id="{{item.id}}"> <li><small>Name: {{item.user.email}}</small></li></h1>
+  <div data-id="{{item.id}}">
+    {{#if item.menu_item}}
+      <li>{{item.menu_item.name}}</li>
+      <li>{{item.menu_item.description}}</li>
+      <li>{{item.menu_item.location}}</li>
+      <li>{{item.id}}</li>
+    {{else}}
+      No description.
+    {{/if}}
+    <button class=delete-button> Remove Item </button>
+  </div>
+</ul>
+{{/each}}
