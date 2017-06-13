@@ -22,4 +22,5 @@ $(() => {
   $('#show-menu').prop('disabled', true)
   $('#show-profiles').prop('disabled', true)
   authEvents.addHandlers()
+
 })

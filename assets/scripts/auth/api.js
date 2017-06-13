@@ -118,10 +118,10 @@ const coupon = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.development}/profiles/1`,
+    url: `${config.apiOrigins.development}/profiles/${data}`,
     method: 'PATCH',
     data: {
-      'price': 19.99
+      'price': 0
     }
   })
   .then(console.log('Coupon added!'))

@@ -1,6 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
+body {
+  margin:0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.65);
+  display:flex;
+  align-items:center;
+}
+.navbar-button {
+  margin: auto;
+}
 ul {
   list-style-type: none;
 }
@@ -30,6 +41,16 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
+div.myButton {
+    background: url('/assets/styles/food-icon.png');
+    width: 60px;
+    height: 60px;
+    border: none;
+    opacity: 0.65;
+}
+#navbarSupportedContent {
+  width: 50%;
+}
 #heading {
   text-align: center;
 }
@@ -41,4 +62,7 @@ ul {
   height: 20vw;
   overflow: hidden;
   white-space: pre-line;
+}
+div {
+  overflow: hidden;
 }

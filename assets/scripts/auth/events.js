@@ -4,7 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const store = require('../store.js')
+// const store = require('../store.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -89,12 +89,22 @@ const onCouponApplier = function (event) {
 }
 const onCoupon = function (event) {
   event.preventDefault()
-  const data = JSON.stringify(getFormFields(event.target)).replace(/\D/g, '')
+  const data = $(event.target).parent().parent().attr('data-id')
   console.log(data)
-  api.coupon()
+  api.coupon(data)
     .then(ui.couponSuccess)
     .catch(ui.couponFailure)
 }
+// const couponFunction = function () {
+//   let x = "One Item free!"
+//   console.log($("#coupon-check").checked)
+//   if ($("#coupon-check").checked) {
+//      x = "Coupon Applied"
+//      $("#coupon-response").innerHTML = x;
+//      $('#coupon-check').off()
+//   }
+//   document.getElementById("coupon-response").innerHTML = x;
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -104,8 +114,10 @@ const addHandlers = () => {
   $('#show-menu').on('click', onShowMenu)
   $('body').on('click', '.add-button', onCreateProfile)
   $('body').on('click', '.delete-button', onDeleteProfile)
+  $('body').on('click', '#coupon-submit', onCoupon)
   $('#show-profiles').on('click', onShowProfiles)
   $('#show-profile-total').on('submit', onShowProfileTotal)
+  $('#coupon-submit').on('click', onCoupon)
   $('#coupon').on('submit', onCouponApplier)
 }
 

@@ -15,7 +15,7 @@ const modalTitleChange = function (title, condition) {
     $('.modal-title').html(`${result} FAILED. CHECK USER PROMPT FOR DETAILS`)
   }
   setTimeout(function () {
-    $('.modal-title').html(result)
+    $('.modal-title').html('')
   }, 2000)
 }
 
@@ -32,7 +32,7 @@ const signUpFailure = (error) => {
 }
 const signInSuccess = (data) => {
   console.log(data)
-  $('#prompt').text('You Are Signed In! Ready To Play!')
+  $('#prompt').text('You Are Signed In! Ready To Order!')
   modalTitleChange('Sign In', true)
   $('#sign-out').prop('disabled', false)
   $('#change-password').prop('disabled', false)
@@ -58,6 +58,7 @@ const changePasswordFailure = (error) => {
 }
 const signOutSuccess = (data) => {
   console.log(data)
+  $('.content').empty()
   $('#prompt').text('Signout Successful')
   $('#sign-out').prop('disabled', true)
   $('#change-password').prop('disabled', true)
@@ -98,23 +99,23 @@ const showProfilesSuccess = (data) => {
 }
 const showProfilesFailure = () => {
   console.log(':(')
-  $('#prompt').text('Show Profiles Failure')
+  $('#prompt').text('Show Profile Failure')
 }
 const deleteProfileSuccess = (data) => {
   console.log('hoo')
   console.log(data)
-  $('#prompt').text('Delete Profiles Successful')
+  $('#prompt').text('Delete Profile Successful')
 }
 const showProfileItemSuccess = (data) => {
   console.log(data)
   $('.content').empty()
   const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
   $('.content').append(showMenuHtml)
-  $('#prompt').text('Show Item Successful')
+  $('#prompt').text('Show Menu Successful')
 }
 const showProfileItemFailure = (error) => {
   console.log(error)
-  $('#prompt').text('Show Item Failure')
+  $('#prompt').text('Show Menu Failure')
 }
 const couponApplierSuccess = (data) => {
   console.log(data)
@@ -123,12 +124,26 @@ const couponApplierSuccess = (data) => {
   $('.content').append(showCouponHtml)
   $('#prompt').text('Apply your coupon!')
 }
+// const couponFunction = function () {
+//   let x = "One Item free!"
+//   if (document.getElementById("myCheck").checked) {
+// 	   x = "Coupon Applied"
+//      document.getElementById("demo").innerHTML = x;
+//      $('#myCheck').off()
+//   }
+//   document.getElementById("demo").innerHTML = x;
+// }
 const couponAplierFailure = (error) => {
   console.log(error)
   $('#prompt').text('Coupon Failure')
 }
 const couponSuccess = (data) => {
   console.log(data)
+  // $('.content').empty()
+  // const showProfilesHtml = showProfilesTemplate({ profile: data.profiles })
+  // $('.content').append(showProfilesHtml)
+  // $('#prompt').text('Show Profiles Successful')
+  // debugger
   $('.content').empty()
   const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
   $('.content').append(showMenuHtml)

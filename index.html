@@ -12,20 +12,77 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1 class="page-heading" id="heading">User Notifications:</h1>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <img src="https://cdn1.iconfinder.com/data/icons/gaming-1-1/128/19-512.png" width="40" height="40" alt="Computer Hope">
+        <button id="menu-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+        </button>
+        <!-- <div class="myButton"><INPUT type="image" name="" value=""></div> -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">
+              Sign Up
+              </button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">
+                Sign In
+              </button>
+            </li>
+            <li class="nav-item">
+              <button id="change-password" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changePasswordModal">
+                Change Password
+              </button>
+            </li>
+            <li class="nav-item">
+              <button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
+            </li>
+            <li class="nav-item">
+              <button id="show-profiles" class="btn btn-primary" type="submit">Profile</button>
+            </li>
+            <li class="nav-item">
+              <button id="sign-out" class="btn btn-primary btn-sm" type="submit">Sign Out</button>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Set Max Price
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Set Price">
+                  <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Enter</button>
+                </form>
+              </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Coupons!
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Enter Coupon Code">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Enter</button>
+                  </form>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 class="page-heading" id="heading">\('o')/______Take A Bite!______\('o')/</h1>
       <div id="prompt">Welcome! Please Sign In!</div>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
       Sign Up
-      </button>
+      </button> -->
 
       <!-- Modal -->
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+              <h3 class="modal-title" id="exampleModalLabel"></h3>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -57,16 +114,16 @@
       </div>
 
       <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
   Sign In
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+        <h3 class="modal-title" id="exampleModalLabel"></h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -93,16 +150,16 @@
 </div>
 
 <!-- Button trigger modal -->
-<button id="change-password" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+<!-- <button id="change-password" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
   Change Password
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h3 class="modal-title" id="exampleModalLabel"></h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -128,11 +185,11 @@
     </div>
   </div>
 </div>
-<button id="sign-out" class="btn btn-primary" type="submit">Sign Out</button>
-<button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
-<button id="show-profiles" class="btn btn-primary" type="submit">Profile</button>
+<!-- <button id="sign-out" class="btn btn-primary" type="submit">Sign Out</button> -->
+<!-- <button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
+<button id="show-profiles" class="btn btn-primary" type="submit">Profile</button> -->
 
-<form class="list-heading" id="show-profile-total">
+<!-- <form class="list-heading" id="show-profile-total">
   <fieldset>
     <legend class="list-heading" id="show-profile-item-indicator">How much do you want to spend?</legend>
     <label>Price: $
@@ -149,7 +206,7 @@
     </label>
     <input type="submit" name="submit" value="Submit">
   </fieldset>
-</form>
+</form> -->
 
 <div id="content" class="content">
 </div>
