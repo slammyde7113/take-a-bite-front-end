@@ -1,13 +1,44 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-h1 {
+
+ul {
+  list-style-type: none;
+}
+.page-heading {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: rgb(140, 138, 253);
+}
+.list-body {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: gray;
+  margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+}
+.list-heading {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: gray;
+}
+.container-fluid {
+  background-image: url('http://img.huffingtonpost.com/asset/scalefit_970_noupscale/585be1aa1600002400bdf2a6.jpeg');
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#heading {
   text-align: center;
 }
 #prompt {
+  text-align: center;
   font-size: 6vw;
-  background-color: blue;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: rgb(140, 138, 253);
   height: 20vw;
-  overflow: scroll;
+  overflow: hidden;
   white-space: pre-line;
 }

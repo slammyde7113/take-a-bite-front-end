@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>User Notifications:</h1>
+      <h1 class="page-heading" id="heading">User Notifications:</h1>
       <div id="prompt">Welcome! Please Sign In!</div>
 
       <!-- Button trigger modal -->
@@ -132,11 +132,20 @@
 <button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
 <button id="show-profiles" class="btn btn-primary" type="submit">Profile</button>
 
-<form id="show-profile-total">
+<form class="list-heading" id="show-profile-total">
   <fieldset>
-    <legend id="show-profile-item-indicator">How much do you want to spend?</legend>
+    <legend class="list-heading" id="show-profile-item-indicator">How much do you want to spend?</legend>
     <label>Price: $
       <input type="number" name="[price]" value="">
+    </label>
+    <input type="submit" name="submit" value="Submit">
+  </fieldset>
+</form>
+<form class="list-heading" id="coupon">
+  <fieldset>
+    <legend class="list-heading" id="coupon-indicator">Enter coupons below</legend>
+    <label>Code:
+      <input type="text" name="[price]" value="">
     </label>
     <input type="submit" name="submit" value="Submit">
   </fieldset>

@@ -19,5 +19,7 @@ const authEvents = require('./auth/events.js')
 $(() => {
   $('#sign-out').prop('disabled', true)
   $('#change-password').prop('disabled', true)
+  $('#show-menu').prop('disabled', true)
+  $('#show-profiles').prop('disabled', true)
   authEvents.addHandlers()
 })

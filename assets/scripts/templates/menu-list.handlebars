@@ -1,10 +1,12 @@
 {{#each menu_item as |item|}}
  <ul>
-  <h1 data-id="{{item.id}}"> <li><small>Name: {{item.name}}</small></li></h1>
-  <div data-id="{{item.id}}">
+  <h1 class="list-heading" data-id="{{item.id}}"> <li><small>Order Number: {{item.id}}</small></li></h1>
+  <div class="list-body" data-id="{{item.id}}">
     {{#if item.description}}
-      <li>{{item.description}}</li>
-      <li>{{item.id}}</li>
+    <li>Name: {{item.name}}
+    <li>Description: {{item.description}}</li>
+    <li>Price: ${{item.price}}</li>
+    <li>Location: {{item.location}}</li>
     {{else}}
       No description.
     {{/if}}

@@ -1,6 +1,7 @@
 'use strict'
 const showMenuTemplate = require('../templates/menu-list.handlebars')
 const showProfilesTemplate = require('../templates/profiles-list.handlebars')
+const showCouponTemplate = require('../templates/coupon-list.handlebars')
 
 // const createButton = function (destination) {
 //   const $addToProfile = $('<input class="profile-input" type="button" value="Add to Profile"/>')
@@ -35,6 +36,8 @@ const signInSuccess = (data) => {
   modalTitleChange('Sign In', true)
   $('#sign-out').prop('disabled', false)
   $('#change-password').prop('disabled', false)
+  $('#show-menu').prop('disabled', false)
+  $('#show-profiles').prop('disabled', false)
 }
 
 const signInFailure = (error) => {
@@ -58,6 +61,8 @@ const signOutSuccess = (data) => {
   $('#prompt').text('Signout Successful')
   $('#sign-out').prop('disabled', true)
   $('#change-password').prop('disabled', true)
+  $('#show-menu').prop('disabled', true)
+  $('#show-profiles').prop('disabled', true)
 }
 
 const signOutFailure = (error) => {
@@ -92,7 +97,7 @@ const showProfilesSuccess = (data) => {
   $('#prompt').text('Show Profiles Successful')
 }
 const showProfilesFailure = () => {
-  console.log(':()')
+  console.log(':(')
   $('#prompt').text('Show Profiles Failure')
 }
 const deleteProfileSuccess = (data) => {
@@ -110,6 +115,28 @@ const showProfileItemSuccess = (data) => {
 const showProfileItemFailure = (error) => {
   console.log(error)
   $('#prompt').text('Show Item Failure')
+}
+const couponApplierSuccess = (data) => {
+  console.log(data)
+  $('.content').empty()
+  const showCouponHtml = showCouponTemplate({ profile: data.profiles })
+  $('.content').append(showCouponHtml)
+  $('#prompt').text('Apply your coupon!')
+}
+const couponAplierFailure = (error) => {
+  console.log(error)
+  $('#prompt').text('Coupon Failure')
+}
+const couponSuccess = (data) => {
+  console.log(data)
+  $('.content').empty()
+  const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
+  $('.content').append(showMenuHtml)
+  $('#prompt').text('COUPON ACTIVATEDDDDD')
+}
+const couponFailure = (error) => {
+  console.log(error)
+  $('#prompt').text('NO COUPON 4 U >:( ')
 }
 
 module.exports = {
@@ -130,5 +157,9 @@ module.exports = {
   showProfilesFailure,
   deleteProfileSuccess,
   showProfileItemSuccess,
-  showProfileItemFailure
+  showProfileItemFailure,
+  couponApplierSuccess,
+  couponAplierFailure,
+  couponSuccess,
+  couponFailure
 }

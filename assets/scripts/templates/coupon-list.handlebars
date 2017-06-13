@@ -8,9 +8,13 @@
       <li>Location: {{item.menu_item.location}}</li>
       <li>Price: ${{item.menu_item.price}}</li>
     {{else}}
-      No description.
+      Menu item does not exist :( .
     {{/if}}
     <button class=delete-button> Remove Item </button>
+    <li>Click to apply coupon: <input type="checkbox" id="myCheck"></li>
+    <li><button onclick="couponFunction()">Submit</button></li>
+
+    <li><p id="coupon-response"></p></li>
   </div>
 </ul>
 {{/each}}

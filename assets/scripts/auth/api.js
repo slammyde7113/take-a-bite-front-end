@@ -112,6 +112,20 @@ const showProfileItem = function (data) {
     return data
   })
 }
+const coupon = function (data) {
+  console.log(data)
+  return $.ajax({
+    headers: {
+      'Authorization': `Token token=${store.userToken}`
+    },
+    url: `${config.apiOrigins.development}/profiles/1`,
+    method: 'PATCH',
+    data: {
+      'price': 19.99
+    }
+  })
+  .then(console.log('Coupon added!'))
+}
 
 module.exports = {
   signUp,
@@ -122,5 +136,6 @@ module.exports = {
   createProfile,
   showProfiles,
   deleteProfile,
-  showProfileItem
+  showProfileItem,
+  coupon
 }

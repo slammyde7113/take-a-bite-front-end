@@ -49,7 +49,6 @@ const onCreateProfile = function (event) {
   event.preventDefault()
   const data = $(event.target).parent().attr('data-id')
   console.log('created profile')
-
   api.createProfile(data)
     .then(ui.createProfileSuccess)
     .catch(ui.createProfileFailure)
@@ -81,6 +80,21 @@ const onDeleteProfile = function (event) {
     .then(ui.deleteProfileSuccess)
     .catch(ui.deleteProfileFailure)
 }
+const onCouponApplier = function (event) {
+  event.preventDefault()
+  console.log('show profiles')
+  api.showProfiles()
+    .then(ui.couponApplierSuccess)
+    .catch(ui.couponAplierFailure)
+}
+const onCoupon = function (event) {
+  event.preventDefault()
+  const data = JSON.stringify(getFormFields(event.target)).replace(/\D/g, '')
+  console.log(data)
+  api.coupon()
+    .then(ui.couponSuccess)
+    .catch(ui.couponFailure)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -92,6 +106,7 @@ const addHandlers = () => {
   $('body').on('click', '.delete-button', onDeleteProfile)
   $('#show-profiles').on('click', onShowProfiles)
   $('#show-profile-total').on('submit', onShowProfileTotal)
+  $('#coupon').on('submit', onCouponApplier)
 }
 
 module.exports = {
