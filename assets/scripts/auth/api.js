@@ -4,14 +4,14 @@ const store = require('../store')
 
 const signUp = function (data) {
   return $.ajax({
-    url: config.apiOrigins.production + '/sign-up/',
+    url: `${config.apiOrigins.development}/sign-up/`,
     method: 'POST',
     data
-  }).then(console.log(`${config.apiOrigins.production}/sign-up/`))
+  }).then(console.log(`${config.apiOrigins.development}/sign-up/`))
 }
 const signIn = function (data) {
   return $.ajax({
-    url: `${config.apiOrigins.production}/sign-in`,
+    url: `${config.apiOrigins.development}/sign-in`,
     method: 'POST',
     data
   })
@@ -29,7 +29,7 @@ const changePassword = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.production}/change-password/${store.id}`,
+    url: `${config.apiOrigins.development}/change-password/${store.id}`,
     method: 'PATCH',
     data
   })
@@ -37,7 +37,7 @@ const changePassword = function (data) {
 }
 const signOut = function () {
   return $.ajax({
-    url: `${config.apiOrigins.production}/sign-out/${store.id}`,
+    url: `${config.apiOrigins.development}/sign-out/${store.id}`,
     method: 'DELETE',
     headers: {
       'Authorization': `Token token=${store.userToken}`
@@ -46,13 +46,13 @@ const signOut = function () {
 }
 const showMenu = function () {
   return $.ajax({
-    url: `${config.apiOrigins.production}/menu_items`,
+    url: `${config.apiOrigins.development}/menu_items`,
     method: 'GET'
   })
 }
 const createProfile = function (data) {
   return $.ajax({
-    url: `${config.apiOrigins.production}/profiles`,
+    url: `${config.apiOrigins.development}/profiles`,
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
@@ -71,7 +71,7 @@ const createProfile = function (data) {
 }
 const showProfiles = function () {
   return $.ajax({
-    url: `${config.apiOrigins.production}/profiles`,
+    url: `${config.apiOrigins.development}/profiles`,
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
@@ -85,7 +85,7 @@ const showProfiles = function () {
 const deleteProfile = function (data) {
   store.profile_id = data
   return $.ajax({
-    url: `${config.apiOrigins.production}/profiles/${store.profile_id}`,
+    url: `${config.apiOrigins.development}/profiles/${store.profile_id}`,
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
@@ -101,7 +101,7 @@ const showProfileItem = function (data) {
   const price = data.toString()
   console.log(price)
   return $.ajax({
-    url: `${config.apiOrigins.production}/profiles/show-profile-total/${data}`,
+    url: `${config.apiOrigins.development}/profiles/show-profile-total/${data}`,
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
@@ -118,7 +118,7 @@ const coupon = function (data) {
     headers: {
       'Authorization': `Token token=${store.userToken}`
     },
-    url: `${config.apiOrigins.production}/profiles/${data}`,
+    url: `${config.apiOrigins.development}/profiles/${data}`,
     method: 'PATCH',
     data: {
       'price': 0
