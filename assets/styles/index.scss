@@ -95,7 +95,7 @@ ul {
   overflow-x: hidden;
   white-space: pre-line;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   button#menu-button {
     display: none;
   }
