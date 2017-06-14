@@ -36,32 +36,27 @@
               </button>
             </li>
             <li class="nav-item">
-              <button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
+              <button id="show-menu" class="btn btn-primary btn-sm" type="submit">Menu</button>
             </li>
             <li class="nav-item">
-              <button id="show-profiles" class="btn btn-primary" type="submit">Profile</button>
+              <button id="show-profiles" class="btn btn-primary btn-sm" type="submit">Profile</button>
             </li>
             <li class="nav-item">
               <button id="sign-out" class="btn btn-primary btn-sm" type="submit">Sign Out</button>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Set Max Price
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Set Price">
-                  <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Enter</button>
-                </form>
-              </div>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Coupons!
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Enter Coupon Code">
-                    <button id="coupon" class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Enter</button>
+                  <form class="list-heading" id="coupon">
+
+                      <label>Code:
+                        <input type="text" name="[price]" value="">
+                      </label>
+                      <input type="submit" name="submit" value="Submit">
+
                   </form>
                 </div>
             </li>
@@ -69,7 +64,7 @@
         </div>
       </nav>
 
-      <h1 class="page-heading" id="heading">\('o')/______Take A Bite!______\('o')/</h1>
+      <h1 class="page-heading" id="heading"><strong>Take A Bite!</strong></h1>
       <div id="prompt">Welcome! Please Sign In!</div>
 
       <!-- Button trigger modal -->
@@ -189,7 +184,7 @@
 <!-- <button id="show-menu" class="btn btn-primary" type="submit">Menu</button>
 <button id="show-profiles" class="btn btn-primary" type="submit">Profile</button> -->
 
-<!-- <form class="list-heading" id="show-profile-total">
+<form class="list-heading" id="show-profile-total">
   <fieldset>
     <legend class="list-heading" id="show-profile-item-indicator">How much do you want to spend?</legend>
     <label>Price: $
@@ -198,7 +193,7 @@
     <input type="submit" name="submit" value="Submit">
   </fieldset>
 </form>
-<form class="list-heading" id="coupon">
+<!-- <form class="list-heading" id="coupon">
   <fieldset>
     <legend class="list-heading" id="coupon-indicator">Enter coupons below</legend>
     <label>Code:

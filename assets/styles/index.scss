@@ -4,18 +4,47 @@ body {
   margin:0;
 }
 ul.navbar-nav {
-  max-width: 300px;
+  max-width: 2750px;
 
 }
-nav {
- max-width: 600px;
+div.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.65);
 }
 .navbar {
-  max-width: 800px;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.65);
   display:flex;
   align-items:center;
+  height: 125px;
+}
+nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+nav::-webkit-scrollbar {
+    width: 1em;
+}
+nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+nav::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid slategrey;
+}
+div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+div::-webkit-scrollbar {
+    width: 1em;
+}
+div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+nav::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid slategrey;
 }
 .navbar-button {
   margin: auto;
@@ -50,10 +79,11 @@ ul {
   background-size: cover;
 }
 #navbarSupportedContent {
-   width: 50%;
+
 }
 #heading {
   text-align: center;
+  font-size: 8vw;
 }
 #prompt {
   text-align: center;
@@ -61,6 +91,7 @@ ul {
   background-color: rgba(0, 0, 0, 0.65);
   color: rgb(140, 138, 253);
   height: 20vw;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   white-space: pre-line;
 }

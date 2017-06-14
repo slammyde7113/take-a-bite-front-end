@@ -79,6 +79,11 @@ const showProfiles = function () {
   })
   .then((data) => {
     console.log(data)
+    store.profile = data
+    console.log(store.profile.profiles)
+    for (let i = 0; i < store.profile.profiles.length; i++) {
+      console.log(store.profile.profiles[i].id)
+    }
     return data
   })
 }

@@ -127,7 +127,7 @@ const couponApplierSuccess = (data) => {
 // const couponFunction = function () {
 //   let x = "One Item free!"
 //   if (document.getElementById("myCheck").checked) {
-// 	   x = "Coupon Applied"
+// x = "Coupon Applied"
 //      document.getElementById("demo").innerHTML = x;
 //      $('#myCheck').off()
 //   }

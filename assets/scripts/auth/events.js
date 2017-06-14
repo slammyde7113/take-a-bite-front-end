@@ -4,7 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('../store.js')
+const store = require('../store.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -83,14 +83,28 @@ const onDeleteProfile = function (event) {
 const onCouponApplier = function (event) {
   event.preventDefault()
   console.log('show profiles')
-  api.showProfiles()
-    .then(ui.couponApplierSuccess)
-    .catch(ui.couponAplierFailure)
+  const check = parseInt(JSON.stringify(getFormFields(event.target)).replace(/\D/g, ''), 10)
+  if (check === 6969) {
+    api.showProfiles()
+      .then(ui.couponApplierSuccess)
+      .catch(ui.couponAplierFailure)
+  }
+  ui.couponAplierFailure()
 }
 const onCoupon = function (event) {
   event.preventDefault()
   const data = $(event.target).parent().parent().attr('data-id')
+  for (let i = 0; i < store.profile.profiles.length; i++) {
+    if (store.profile.profiles[i].id === parseInt(data, 10)) {
+      console.log(JSON.stringify(store.profile.profiles[i].menu_item.price).replace(/\D/g, ''))
+      store.oldPrice = JSON.stringify(store.profile.profiles[i].menu_item.price).replace(/\D/g, '')
+      store.oldId = JSON.stringify(store.profile.profiles[i].id).replace(/\D/g, '')
+    }
+  }
+  api.showProfile
   console.log(data)
+  console.log(store.oldPrice)
+  console.log(store.oldId)
   api.coupon(data)
     .then(ui.couponSuccess)
     .catch(ui.couponFailure)
