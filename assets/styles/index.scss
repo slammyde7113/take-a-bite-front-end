@@ -3,7 +3,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   margin:0;
 }
+ul.navbar-nav {
+  max-width: 300px;
+
+}
+nav {
+ max-width: 750px;
+}
 .navbar {
+  max-width: 800px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.65);
   display:flex;
@@ -41,22 +49,15 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
-div.myButton {
-    background: url('/assets/styles/food-icon.png');
-    width: 60px;
-    height: 60px;
-    border: none;
-    opacity: 0.65;
-}
 #navbarSupportedContent {
-  width: 50%;
+   width: 50%;
 }
 #heading {
   text-align: center;
 }
 #prompt {
   text-align: center;
-  font-size: 4vw;
+  font-size: 6vw;
   background-color: rgba(0, 0, 0, 0.65);
   color: rgb(140, 138, 253);
   height: 20vw;
