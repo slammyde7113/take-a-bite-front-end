@@ -57,7 +57,8 @@ const createProfile = function (data) {
       'profile':
       {
         'user_id': '' + store.id + '',
-        'menu_item_id': '' + data + ''
+        'menu_item_id': '' + data + '',
+        'coupon_menu_id': 3
       }
     }
   })
