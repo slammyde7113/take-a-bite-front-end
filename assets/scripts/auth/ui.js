@@ -110,7 +110,7 @@ const couponSuccess = (data) => {
   $('.content').empty()
   const showMenuHtml = showMenuTemplate({ menu_item: data.menu_items })
   $('.content').append(showMenuHtml)
-  $('#prompt').text('COUPON ACTIVATEDDDDD')
+  $('#prompt').text('COUPON ACTIVATEDDDDD! Please Return to Profiles To See Savings')
 }
 const couponFailure = () => {
   api.showProfile()
