@@ -1,3 +1,4 @@
+
 {{#each profile as |item|}}
  <ul data-id="{{item.id}}">
   <h1 class="list-heading" data-id="{{item.id}}"> <li><small>User: {{item.user.email}}</small></li></h1>
@@ -7,7 +8,7 @@
       <li>Description: {{item.menu_item.description}}</li>
       <li>Location: {{item.menu_item.location}}</li>
       <li>Price: ${{item.menu_item.price}}</li>
-      <li>Coupon: {{item.coupon_menu.name}}</li>
+      <li>Savings from Coupon: {{item.coupon_menu.price}}</li>
     {{else}}
       No description.
     {{/if}}

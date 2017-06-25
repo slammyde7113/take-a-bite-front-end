@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const handlebars = require('handlebars')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -17,6 +18,13 @@ const authEvents = require('./auth/events.js')
 
 // On document ready
 $(() => {
+  handlebars.registerHelper('ifvalue', function (conditional, options) {
+    if (conditional === options.hash.equals) {
+      return options.fn(this)
+    } else {
+      return options.inverse(this)
+    }
+  })
   $('#sign-out').prop('disabled', true)
   $('#change-password').prop('disabled', true)
   $('#show-menu').prop('disabled', true)

@@ -83,6 +83,7 @@ const onCouponApplier = function (event) {
 const onCoupon = function (event) {
   event.preventDefault()
   const data = $(event.target).parent().parent().attr('data-id')
+  const string = $(event.target).parent().parent().text()
   for (let i = 0; i < store.profile.profiles.length; i++) {
     if (store.profile.profiles[i].id === parseInt(data, 10)) {
       store.oldPrice = JSON.stringify(store.profile.profiles[i].menu_item.price).replace(/\D/g, '')
@@ -90,9 +91,9 @@ const onCoupon = function (event) {
     }
   }
   api.showProfile
-  api.coupon(data)
-    .then(ui.couponSuccess)
-    .catch(ui.couponFailure)
+  api.coupon(data, string)
+    .then(ui.couponFailure)
+    .catch(ui.couponSuccess)
 }
 
 const addHandlers = () => {

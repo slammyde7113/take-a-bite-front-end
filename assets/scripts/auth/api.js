@@ -58,7 +58,7 @@ const createProfile = function (data) {
       {
         'user_id': '' + store.id + '',
         'menu_item_id': '' + data + '',
-        'coupon_menu_id': 3
+        'coupon_menu_id': 4
       }
     }
   })
@@ -103,7 +103,8 @@ const showProfileItem = function (data) {
     return data
   })
 }
-const coupon = function (data) {
+const coupon = function (data, string) {
+  console.log(string)
   return $.ajax({
     headers: {
       'Authorization': `Token token=${store.userToken}`
@@ -111,8 +112,12 @@ const coupon = function (data) {
     url: `${config.apiOrigins.development}/profiles/${data}`,
     method: 'PATCH',
     data: {
-      'price': 0
+      'profile': {
+        'coupon_menu_id': 5
+      }
     }
+  }).then((data) => {
+    return console.log(data)
   })
 }
 

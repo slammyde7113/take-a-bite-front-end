@@ -2,6 +2,7 @@
 const showMenuTemplate = require('../templates/menu-list.handlebars')
 const showProfilesTemplate = require('../templates/profiles-list.handlebars')
 const showCouponTemplate = require('../templates/coupon-list.handlebars')
+const api = require('./api')
 
 const modalTitleChange = function (title, condition) {
   const result = title
@@ -112,6 +113,7 @@ const couponSuccess = (data) => {
   $('#prompt').text('COUPON ACTIVATEDDDDD')
 }
 const couponFailure = () => {
+  api.showProfile()
   $('#prompt').text('NO COUPON 4 U >:( ')
 }
 
