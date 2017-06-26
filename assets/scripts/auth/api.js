@@ -7,7 +7,7 @@ const signUp = function (data) {
     url: `${config.apiOrigins.production}/sign-up/`,
     method: 'POST',
     data
-  }).then(console.log(`${config.apiOrigins.production}/sign-up/`))
+  })
 }
 const signIn = function (data) {
   return $.ajax({
@@ -104,7 +104,6 @@ const showProfileItem = function (data) {
   })
 }
 const coupon = function (data, string) {
-  console.log(string)
   return $.ajax({
     headers: {
       'Authorization': `Token token=${store.userToken}`
@@ -116,8 +115,6 @@ const coupon = function (data, string) {
         'coupon_menu_id': 5
       }
     }
-  }).then((data) => {
-    return console.log(data)
   })
 }
 
