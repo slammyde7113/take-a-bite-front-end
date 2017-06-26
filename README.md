@@ -7,6 +7,9 @@
 Link to hosted application:
 [Take-A-Bite By Sam Dyer](https://slammyde7113.github.io/take-a-bite-front-end/)
 
+Link to back-end api:
+[Rails Api](https://github.com/slammyde7113/take-a-bite-back-end)
+
 ### Technologies used:
 
 -   [Webpack](https://webpack.github.io)
